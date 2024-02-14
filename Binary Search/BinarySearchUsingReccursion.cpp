@@ -11,9 +11,9 @@ int search(vector<int>& v, int low, int high, int t) {
     if (v[mid] == t) {
         return mid;
     } else if (v[mid] > t) {
-        return search(v, low, mid - 1, t); // Corrected parameters for the recursive call
+        return search(v, low, mid - 1, t);
     } else {
-        return search(v, mid + 1, high, t); // Corrected parameters for the recursive call
+        return search(v, mid + 1, high, t);
     }
 }
 
