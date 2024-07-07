@@ -1,6 +1,6 @@
+// Online C++ compiler to run C++ program online
 #include <bits/stdc++.h>
 using namespace std;
-
 class Node {
     public:
     int value;
@@ -38,10 +38,32 @@ void print(Node* head){
     }
 }
 
- int main() {
+Node* deleteHead(Node* head){
+    head = head->next;
+    head->prev=nullptr;
+    return head;
+}
+void deleteTail(Node* head){
+    Node* temp = head;
+    while(temp->next!=NULL){
+        temp = temp->next;
+    }
+    temp = temp->prev;
+    delete temp->next;
+    temp->next=NULL;
+}
+Node* deletekthElement(Node* head, int k){
+    
+}
+int main() {
+    // Write C++ code here
     vector<int> arr = {1, 2, 3, 4, 5};
     Node* head = convertArrayToDLL(arr);
     print(head);
-    
+    head = deleteHead(head);
+    cout<<endl;
+    deleteTail(head);
+    print(head);
+
     return 0;
- }
+}
